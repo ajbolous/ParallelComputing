@@ -7,7 +7,6 @@
 #include <CL/cl.h>
 #include <string>
 #include <chrono>
-#include <stdarg.h>
 
 class Kernel
 {
@@ -28,28 +27,48 @@ class Kernel
         _kernel = kernel;
     }
 
-    void setArg(int index, int size, void *data)
+    cl_mem allocateMemBuffer(int size, void *data, int flags)
     {
         int ret;
-
-        if (data == NULL)
-        {
-            printf("#Setting LocalArg -index:%d -size:%d -Ptr: %d\n", index, size, data);
-
-            ret = clSetKernelArg(_kernel, index, size, NULL);
-            if (ret != CL_SUCCESS)
-                printf("Error allocating memory CODE: %d\n", ret);
-
-            return;
-        }
-        printf("#Setting Arg -index:%d -size:%d -Ptr: %d\n", index, size, data);
-        _mem[index] = clCreateBuffer(_context, CL_MEM_READ_WRITE, size, NULL, &ret);
-        clEnqueueWriteBuffer(_queue, _mem[index], CL_TRUE, 0, size, data, 0, NULL, NULL);
+        printf("#Allocating memory buffer -size:%d -size:%d -Ptr: %d\n", index, size, data);
+        if (flags == NULL)
+            flags = CL_MEM_READ_WRITE;
+        cl_mem mem = clCreateBuffer(_context, flags, size, NULL, &ret);
+        clEnqueueWriteBuffer(_queue, mem, CL_TRUE, 0, size, data, 0, NULL, NULL);
 
         if (ret != CL_SUCCESS)
-            printf("Error allocating memory CODE: %d\n", ret);
+        {
+            printf("\t-Error allocating memory CODE: %d\n", ret);
+            return NULL;
+        }
+        return mem;
+    }
 
+    void setArg(int index, int size, void *data)
+    {
+        printf("#Setting Arg -index:%d -size:%d -Ptr: %d\n", index, size, data);
         clSetKernelArg(_kernel, index, sizeof(cl_mem), (void *)&_mem[index]);
+    }
+
+    void setBufferArg(int index, int size, void *data)
+    {
+        printf("#Setting Memory Buffer Arg -index:%d -size:%d -Ptr: %d\n", index, size, data);
+
+        cl_mem mem = allocateMemBuffer(size, data, NULL);
+        if (mem == NULL)
+            return;
+
+        _mem[index] = mem;
+        setArg(index, sizeof(cl_mem), (void *)&mem);
+    }
+
+    void setLocalArg(int index, int size)
+    {
+        int ret;
+        printf("#Setting LocalArg -index:%d -size:%d -Ptr: %d\n", index, size, data);
+        ret = clSetKernelArg(_kernel, index, size, NULL);
+        if (ret != CL_SUCCESS)
+            printf("\t-Error setting argument CODE: %d\n", ret);
     }
 
     void execute(char *name, int dim, size_t *globalWorkSize, size_t *localWorkSize)
@@ -67,11 +86,13 @@ class Kernel
         auto start = std::chrono::high_resolution_clock::now();
 
         int ret = clEnqueueNDRangeKernel(_queue, _kernel, dim, NULL, globalWorkSize, localWorkSize, 0, NULL, NULL);
+        if (ret != CL_SUCCESS)
+            printf("\t-Error executing Kernel Code: %d\n", ret);
 
         auto finish = std::chrono::high_resolution_clock::now();
         auto d = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
 
-        printf("# Executed Kernel %s -Return code: %d -Time elapsed: %d Nano Seconds\n", name, ret, d);
+        printf("# Done executing Kernel %s -Return code: %d -Time elapsed: %d Nano Seconds\n", name, ret, d);
         printf("-----------------------------------------------\n");
     }
 

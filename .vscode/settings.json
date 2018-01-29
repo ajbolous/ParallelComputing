@@ -38,6 +38,13 @@
         "new": "cpp",
         "stdexcept": "cpp",
         "thread": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }
