@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bolous/projects/parallel_computing/ocl/ocl_kernel.hpp
+stdio.h
+-
+stdlib.h
+-
+CL/cl.h
+-
+string
+-
+chrono
+-
+stdarg.h
+-
+
+/home/bolous/projects/parallel_computing/ocl/ocl_loader.hpp
+stdio.h
+-
+stdlib.h
+-
+CL/cl.h
+-
+string
+-
+ocl_kernel.hpp
+/home/bolous/projects/parallel_computing/ocl/ocl_kernel.hpp
+
+/home/bolous/projects/parallel_computing/parallel_reduce/parallel_reduce.cpp
+stdio.h
+-
+stdlib.h
+-
+CL/cl.h
+-
+../ocl/ocl_loader.hpp
+/home/bolous/projects/parallel_computing/ocl/ocl_loader.hpp
+

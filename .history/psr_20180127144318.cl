@@ -1,0 +1,18 @@
+__kernel void parallelSum(__global double *vecArray, __global double *totalSums, __local double *workGroupSums)
+{
+    int globalId = get_global_id(0);
+    int groupId = get_group_id(0);
+    int localId = get_local_id(0);
+
+    workGroupSums[localId] = globalId >= 1000000 ? 0 : vecArray[globalId];
+
+    for (int i = get_local_size(0) / 2; i > 0; i /= 2)
+    {
+        barrier(CLK_LOCAL_MEM_FENCE);
+        if (localId < i)
+            workGroupSums[localId] += workGroupSums[localId + i];
+    }
+
+    if (localId == 0)
+        totalSums[groupId] = workGroupSums[0];
+}

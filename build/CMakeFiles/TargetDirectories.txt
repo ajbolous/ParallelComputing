@@ -1,0 +1,4 @@
+/home/bolous/projects/parallel_computing/build/CMakeFiles/edit_cache.dir
+/home/bolous/projects/parallel_computing/build/CMakeFiles/TwoStagePCCL.dir
+/home/bolous/projects/parallel_computing/build/CMakeFiles/rebuild_cache.dir
+/home/bolous/projects/parallel_computing/build/CMakeFiles/ParallelReduce.dir
