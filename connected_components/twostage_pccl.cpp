@@ -42,6 +42,29 @@ void linearTwoStage(char **image, int width, int height)
 		}
 }
 
+/*
+	1. read image
+	2. convert into binary and shape 1920x1080
+	3. run the sequential algorithm and time it
+	4. run the parallel algorithm and time it
+	5. output results
+
+	* Maybe we do a live video feed with euclid ...
+*/
+cv::Mat loadImage()
+{
+	cv::Mat src = cv::imread("src.jpg", 1); // load source image
+
+	cv::Size size(100, 100);	//the dst image size,e.g.100x100
+	cv::resize(src, src, size); //resize image
+
+	cv::Mat gray;
+	cv::cvtColor(src, gray, CV_BGR2GRAY); //perform gray scale conversion.
+	cv::threshold(gray, thr, 100, 255, THRESH_BINARY);
+
+	return src;
+}
+
 int main()
 {
 	OpenClLoader ocl;
