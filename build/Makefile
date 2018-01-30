@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TwoStagePCCL
-
-# Build rule for target.
-TwoStagePCCL: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TwoStagePCCL
-.PHONY : TwoStagePCCL
-
-# fast build rule for target.
-TwoStagePCCL/fast:
-	$(MAKE) -f CMakeFiles/TwoStagePCCL.dir/build.make CMakeFiles/TwoStagePCCL.dir/build
-.PHONY : TwoStagePCCL/fast
-
-#=============================================================================
 # Target rules for targets named ParallelReduce
 
 # Build rule for target.
@@ -136,32 +123,85 @@ ParallelReduce/fast:
 	$(MAKE) -f CMakeFiles/ParallelReduce.dir/build.make CMakeFiles/ParallelReduce.dir/build
 .PHONY : ParallelReduce/fast
 
-connected_components/twostage_pccl.o: connected_components/twostage_pccl.cpp.o
+#=============================================================================
+# Target rules for targets named TwoStageSerial
 
-.PHONY : connected_components/twostage_pccl.o
+# Build rule for target.
+TwoStageSerial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TwoStageSerial
+.PHONY : TwoStageSerial
+
+# fast build rule for target.
+TwoStageSerial/fast:
+	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/build
+.PHONY : TwoStageSerial/fast
+
+#=============================================================================
+# Target rules for targets named NeighborPCCL
+
+# Build rule for target.
+NeighborPCCL: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NeighborPCCL
+.PHONY : NeighborPCCL
+
+# fast build rule for target.
+NeighborPCCL/fast:
+	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/build
+.PHONY : NeighborPCCL/fast
+
+connected_components/parallel_neighbor.o: connected_components/parallel_neighbor.cpp.o
+
+.PHONY : connected_components/parallel_neighbor.o
 
 # target to build an object file
-connected_components/twostage_pccl.cpp.o:
-	$(MAKE) -f CMakeFiles/TwoStagePCCL.dir/build.make CMakeFiles/TwoStagePCCL.dir/connected_components/twostage_pccl.cpp.o
-.PHONY : connected_components/twostage_pccl.cpp.o
+connected_components/parallel_neighbor.cpp.o:
+	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/connected_components/parallel_neighbor.cpp.o
+.PHONY : connected_components/parallel_neighbor.cpp.o
 
-connected_components/twostage_pccl.i: connected_components/twostage_pccl.cpp.i
+connected_components/parallel_neighbor.i: connected_components/parallel_neighbor.cpp.i
 
-.PHONY : connected_components/twostage_pccl.i
+.PHONY : connected_components/parallel_neighbor.i
 
 # target to preprocess a source file
-connected_components/twostage_pccl.cpp.i:
-	$(MAKE) -f CMakeFiles/TwoStagePCCL.dir/build.make CMakeFiles/TwoStagePCCL.dir/connected_components/twostage_pccl.cpp.i
-.PHONY : connected_components/twostage_pccl.cpp.i
+connected_components/parallel_neighbor.cpp.i:
+	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/connected_components/parallel_neighbor.cpp.i
+.PHONY : connected_components/parallel_neighbor.cpp.i
 
-connected_components/twostage_pccl.s: connected_components/twostage_pccl.cpp.s
+connected_components/parallel_neighbor.s: connected_components/parallel_neighbor.cpp.s
 
-.PHONY : connected_components/twostage_pccl.s
+.PHONY : connected_components/parallel_neighbor.s
 
 # target to generate assembly for a file
-connected_components/twostage_pccl.cpp.s:
-	$(MAKE) -f CMakeFiles/TwoStagePCCL.dir/build.make CMakeFiles/TwoStagePCCL.dir/connected_components/twostage_pccl.cpp.s
-.PHONY : connected_components/twostage_pccl.cpp.s
+connected_components/parallel_neighbor.cpp.s:
+	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/connected_components/parallel_neighbor.cpp.s
+.PHONY : connected_components/parallel_neighbor.cpp.s
+
+connected_components/serial_twostage.o: connected_components/serial_twostage.cpp.o
+
+.PHONY : connected_components/serial_twostage.o
+
+# target to build an object file
+connected_components/serial_twostage.cpp.o:
+	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/connected_components/serial_twostage.cpp.o
+.PHONY : connected_components/serial_twostage.cpp.o
+
+connected_components/serial_twostage.i: connected_components/serial_twostage.cpp.i
+
+.PHONY : connected_components/serial_twostage.i
+
+# target to preprocess a source file
+connected_components/serial_twostage.cpp.i:
+	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/connected_components/serial_twostage.cpp.i
+.PHONY : connected_components/serial_twostage.cpp.i
+
+connected_components/serial_twostage.s: connected_components/serial_twostage.cpp.s
+
+.PHONY : connected_components/serial_twostage.s
+
+# target to generate assembly for a file
+connected_components/serial_twostage.cpp.s:
+	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/connected_components/serial_twostage.cpp.s
+.PHONY : connected_components/serial_twostage.cpp.s
 
 parallel_reduce/parallel_reduce.o: parallel_reduce/parallel_reduce.cpp.o
 
@@ -197,12 +237,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... TwoStagePCCL"
-	@echo "... rebuild_cache"
 	@echo "... ParallelReduce"
-	@echo "... connected_components/twostage_pccl.o"
-	@echo "... connected_components/twostage_pccl.i"
-	@echo "... connected_components/twostage_pccl.s"
+	@echo "... rebuild_cache"
+	@echo "... TwoStageSerial"
+	@echo "... NeighborPCCL"
+	@echo "... connected_components/parallel_neighbor.o"
+	@echo "... connected_components/parallel_neighbor.i"
+	@echo "... connected_components/parallel_neighbor.s"
+	@echo "... connected_components/serial_twostage.o"
+	@echo "... connected_components/serial_twostage.i"
+	@echo "... connected_components/serial_twostage.s"
 	@echo "... parallel_reduce/parallel_reduce.o"
 	@echo "... parallel_reduce/parallel_reduce.i"
 	@echo "... parallel_reduce/parallel_reduce.s"

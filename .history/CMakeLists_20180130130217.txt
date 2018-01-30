@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 2.8)
+set (CMAKE_CXX_STANDARD 11)
+project( ParallelComputing )
+
+
+find_package( OpenCV REQUIRED )
+find_package( OpenCL REQUIRED )
+
+
+add_executable( ParallelReduce parallel_reduce/parallel_reduce.cpp )
+target_link_libraries( ParallelReduce ${OpenCV_LIBS} )
+target_link_libraries( ParallelReduce ${OpenCL_LIBRARY} )
+configure_file(parallel_reduce/psr.cl psr.cl COPYONLY)
+
+add_executable( TwoStagePCCL connected_components/twostage_pccl.cpp )
+target_link_libraries( TwoStagePCCL ${OpenCV_LIBS} )
+target_link_libraries( TwoStagePCCL ${OpenCL_LIBRARY} )
+configure_file(connected_components/pccl.cl pccl.cl COPYONLY)
+configure_file(connected_components/test.jpg test.jpg COPYONLY)
+

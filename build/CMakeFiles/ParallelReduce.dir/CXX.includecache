@@ -17,8 +17,6 @@ string
 -
 chrono
 -
-stdarg.h
--
 
 /home/bolous/projects/parallel_computing/ocl/ocl_loader.hpp
 stdio.h

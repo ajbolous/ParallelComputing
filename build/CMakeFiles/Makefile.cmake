@@ -12,6 +12,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
   "../connected_components/pccl.cl"
+  "../connected_components/test.jpg"
+  "../connected_components/test2.jpg"
+  "../connected_components/test3.jpg"
+  "../connected_components/test4.jpg"
   "../parallel_reduce/psr.cl"
   "/opt/ros/kinetic/share/OpenCV-3.3.1/OpenCVConfig-version.cmake"
   "/opt/ros/kinetic/share/OpenCV-3.3.1/OpenCVConfig.cmake"
@@ -50,11 +54,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "psr.cl"
   "pccl.cl"
+  "test.jpg"
+  "test2.jpg"
+  "test3.jpg"
+  "test4.jpg"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/TwoStagePCCL.dir/DependInfo.cmake"
   "CMakeFiles/ParallelReduce.dir/DependInfo.cmake"
+  "CMakeFiles/TwoStageSerial.dir/DependInfo.cmake"
+  "CMakeFiles/NeighborPCCL.dir/DependInfo.cmake"
   )
