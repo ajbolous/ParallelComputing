@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bolous/projects/parallel_computing/connected_components/serial_twostage.cpp
+/home/kira/parallelComputing/connected_components/serial_twostage.cpp
 stdio.h
 -
 stdlib.h
@@ -18,9 +18,9 @@ chrono
 opencv2/opencv.hpp
 -
 ../ocl/ocl_loader.hpp
-/home/bolous/projects/parallel_computing/ocl/ocl_loader.hpp
+/home/kira/parallelComputing/ocl/ocl_loader.hpp
 
-/home/bolous/projects/parallel_computing/ocl/ocl_kernel.hpp
+/home/kira/parallelComputing/ocl/ocl_kernel.hpp
 stdio.h
 -
 stdlib.h
@@ -32,7 +32,7 @@ string
 chrono
 -
 
-/home/bolous/projects/parallel_computing/ocl/ocl_loader.hpp
+/home/kira/parallelComputing/ocl/ocl_loader.hpp
 stdio.h
 -
 stdlib.h
@@ -42,7 +42,7 @@ CL/cl.h
 string
 -
 ocl_kernel.hpp
-/home/bolous/projects/parallel_computing/ocl/ocl_kernel.hpp
+/home/kira/parallelComputing/ocl/ocl_kernel.hpp
 
 /opt/ros/kinetic/include/opencv-3.3.1/opencv/cxcore.h
 opencv2/core/core_c.h

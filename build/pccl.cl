@@ -12,7 +12,7 @@ __kernel void twoStagePccl(__global uchar *image, __global int *changed, int wid
         int nrow = row;
         int ncol = col;
         int nindex = nrow * width + ncol;
-        int nlabel = 0;
+        uchar nlabel = 0;
 
         for (int i = -1; i < 2; i++)
         {
@@ -22,7 +22,8 @@ __kernel void twoStagePccl(__global uchar *image, __global int *changed, int wid
                 nrow = row + i;
                 ncol = col + j;
                 nindex = nrow * width + ncol;
-                int nlabel = image[nindex];
+                nlabel = image[nindex];
+   
                 if ((nlabel > 0) && (nlabel < minLabel))
                 {
                     minLabel = nlabel;
@@ -41,7 +42,6 @@ __kernel void firstRunPccl(__global uchar *image, int width, int height)
     int index = row * width + col;
     if (image[index] > 0)
     {
-        image[index] = get_group_id(1) + get_group_id(0);
-        image[index] *= 2;
+        image[index] = 15*(get_group_id(1) + get_group_id(0));
     }
 }

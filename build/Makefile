@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bolous/projects/parallel_computing
+CMAKE_SOURCE_DIR = /home/kira/parallelComputing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bolous/projects/parallel_computing/build
+CMAKE_BINARY_DIR = /home/kira/parallelComputing/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles /home/bolous/projects/parallel_computing/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles /home/kira/parallelComputing/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -148,6 +148,46 @@ NeighborPCCL: cmake_check_build_system
 NeighborPCCL/fast:
 	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/build
 .PHONY : NeighborPCCL/fast
+
+#=============================================================================
+# Target rules for targets named CameraPCLL
+
+# Build rule for target.
+CameraPCLL: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CameraPCLL
+.PHONY : CameraPCLL
+
+# fast build rule for target.
+CameraPCLL/fast:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/build
+.PHONY : CameraPCLL/fast
+
+connected_components/camera_pccl.o: connected_components/camera_pccl.cpp.o
+
+.PHONY : connected_components/camera_pccl.o
+
+# target to build an object file
+connected_components/camera_pccl.cpp.o:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/connected_components/camera_pccl.cpp.o
+.PHONY : connected_components/camera_pccl.cpp.o
+
+connected_components/camera_pccl.i: connected_components/camera_pccl.cpp.i
+
+.PHONY : connected_components/camera_pccl.i
+
+# target to preprocess a source file
+connected_components/camera_pccl.cpp.i:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/connected_components/camera_pccl.cpp.i
+.PHONY : connected_components/camera_pccl.cpp.i
+
+connected_components/camera_pccl.s: connected_components/camera_pccl.cpp.s
+
+.PHONY : connected_components/camera_pccl.s
+
+# target to generate assembly for a file
+connected_components/camera_pccl.cpp.s:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/connected_components/camera_pccl.cpp.s
+.PHONY : connected_components/camera_pccl.cpp.s
 
 connected_components/parallel_neighbor.o: connected_components/parallel_neighbor.cpp.o
 
@@ -237,10 +277,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... ParallelReduce"
 	@echo "... rebuild_cache"
+	@echo "... ParallelReduce"
 	@echo "... TwoStageSerial"
 	@echo "... NeighborPCCL"
+	@echo "... CameraPCLL"
+	@echo "... connected_components/camera_pccl.o"
+	@echo "... connected_components/camera_pccl.i"
+	@echo "... connected_components/camera_pccl.s"
 	@echo "... connected_components/parallel_neighbor.o"
 	@echo "... connected_components/parallel_neighbor.i"
 	@echo "... connected_components/parallel_neighbor.s"

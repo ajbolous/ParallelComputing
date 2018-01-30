@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolous/projects/parallel_computing/parallel_reduce/parallel_reduce.cpp" "/home/bolous/projects/parallel_computing/build/CMakeFiles/ParallelReduce.dir/parallel_reduce/parallel_reduce.cpp.o"
+  "/home/kira/parallelComputing/parallel_reduce/parallel_reduce.cpp" "/home/kira/parallelComputing/build/CMakeFiles/ParallelReduce.dir/parallel_reduce/parallel_reduce.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -19,6 +19,10 @@ add_executable(NeighborPCCL connected_components/parallel_neighbor.cpp)
 target_link_libraries(NeighborPCCL ${OpenCV_LIBS})
 target_link_libraries(NeighborPCCL ${OpenCL_LIBRARY})
 
+add_executable(CameraPCLL connected_components/camera_pccl.cpp)
+target_link_libraries(CameraPCLL ${OpenCV_LIBS})
+target_link_libraries(CameraPCLL ${OpenCL_LIBRARY})
+
 
 configure_file(connected_components/pccl.cl pccl.cl COPYONLY)
 configure_file(connected_components/test.jpg test.jpg COPYONLY)

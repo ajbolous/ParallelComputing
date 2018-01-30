@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bolous/projects/parallel_computing
+CMAKE_SOURCE_DIR = /home/kira/parallelComputing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bolous/projects/parallel_computing/build
+CMAKE_BINARY_DIR = /home/kira/parallelComputing/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/ParallelReduce.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/bolous/projects/parallel_computing/build
 CMakeFiles/ParallelReduce.dir/all:
 	$(MAKE) -f CMakeFiles/ParallelReduce.dir/build.make CMakeFiles/ParallelReduce.dir/depend
 	$(MAKE) -f CMakeFiles/ParallelReduce.dir/build.make CMakeFiles/ParallelReduce.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bolous/projects/parallel_computing/build/CMakeFiles --progress-num=3,4 "Built target ParallelReduce"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=5,6 "Built target ParallelReduce"
 .PHONY : CMakeFiles/ParallelReduce.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/ParallelReduce.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ParallelReduce.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ParallelReduce.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
 .PHONY : CMakeFiles/ParallelReduce.dir/rule
 
 # Convenience name for target.
@@ -103,7 +103,7 @@ clean: CMakeFiles/ParallelReduce.dir/clean
 CMakeFiles/TwoStageSerial.dir/all:
 	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/depend
 	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bolous/projects/parallel_computing/build/CMakeFiles --progress-num=5,6 "Built target TwoStageSerial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=7,8 "Built target TwoStageSerial"
 .PHONY : CMakeFiles/TwoStageSerial.dir/all
 
 # Include target in all.
@@ -113,9 +113,9 @@ all: CMakeFiles/TwoStageSerial.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TwoStageSerial.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TwoStageSerial.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
 .PHONY : CMakeFiles/TwoStageSerial.dir/rule
 
 # Convenience name for target.
@@ -140,7 +140,7 @@ clean: CMakeFiles/TwoStageSerial.dir/clean
 CMakeFiles/NeighborPCCL.dir/all:
 	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/depend
 	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bolous/projects/parallel_computing/build/CMakeFiles --progress-num=1,2 "Built target NeighborPCCL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=3,4 "Built target NeighborPCCL"
 .PHONY : CMakeFiles/NeighborPCCL.dir/all
 
 # Include target in all.
@@ -150,9 +150,9 @@ all: CMakeFiles/NeighborPCCL.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/NeighborPCCL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/NeighborPCCL.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bolous/projects/parallel_computing/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
 .PHONY : CMakeFiles/NeighborPCCL.dir/rule
 
 # Convenience name for target.
@@ -167,6 +167,43 @@ CMakeFiles/NeighborPCCL.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/NeighborPCCL.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/CameraPCLL.dir
+
+# All Build rule for target.
+CMakeFiles/CameraPCLL.dir/all:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/depend
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=1,2 "Built target CameraPCLL"
+.PHONY : CMakeFiles/CameraPCLL.dir/all
+
+# Include target in all.
+all: CMakeFiles/CameraPCLL.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CameraPCLL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CameraPCLL.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
+.PHONY : CMakeFiles/CameraPCLL.dir/rule
+
+# Convenience name for target.
+CameraPCLL: CMakeFiles/CameraPCLL.dir/rule
+
+.PHONY : CameraPCLL
+
+# clean rule for target.
+CMakeFiles/CameraPCLL.dir/clean:
+	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/clean
+.PHONY : CMakeFiles/CameraPCLL.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/CameraPCLL.dir/clean
 
 .PHONY : clean
 

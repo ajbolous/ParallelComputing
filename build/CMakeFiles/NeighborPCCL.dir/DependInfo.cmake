@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolous/projects/parallel_computing/connected_components/parallel_neighbor.cpp" "/home/bolous/projects/parallel_computing/build/CMakeFiles/NeighborPCCL.dir/connected_components/parallel_neighbor.cpp.o"
+  "/home/kira/parallelComputing/connected_components/parallel_neighbor.cpp" "/home/kira/parallelComputing/build/CMakeFiles/NeighborPCCL.dir/connected_components/parallel_neighbor.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

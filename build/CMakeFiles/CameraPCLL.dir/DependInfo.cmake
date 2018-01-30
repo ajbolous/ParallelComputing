@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolous/projects/parallel_computing/connected_components/twostage_pccl.cpp" "/home/bolous/projects/parallel_computing/build/CMakeFiles/TwoStagePCCL.dir/connected_components/twostage_pccl.cpp.o"
+  "/home/kira/parallelComputing/connected_components/camera_pccl.cpp" "/home/kira/parallelComputing/build/CMakeFiles/CameraPCLL.dir/connected_components/camera_pccl.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

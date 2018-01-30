@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bolous/projects/parallel_computing/connected_components/serial_twostage.cpp" "/home/bolous/projects/parallel_computing/build/CMakeFiles/TwoStageSerial.dir/connected_components/serial_twostage.cpp.o"
+  "/home/kira/parallelComputing/connected_components/serial_twostage.cpp" "/home/kira/parallelComputing/build/CMakeFiles/TwoStageSerial.dir/connected_components/serial_twostage.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,5 +1,6 @@
-/home/bolous/projects/parallel_computing/build/CMakeFiles/edit_cache.dir
-/home/bolous/projects/parallel_computing/build/CMakeFiles/ParallelReduce.dir
-/home/bolous/projects/parallel_computing/build/CMakeFiles/rebuild_cache.dir
-/home/bolous/projects/parallel_computing/build/CMakeFiles/TwoStageSerial.dir
-/home/bolous/projects/parallel_computing/build/CMakeFiles/NeighborPCCL.dir
+/home/kira/parallelComputing/build/CMakeFiles/edit_cache.dir
+/home/kira/parallelComputing/build/CMakeFiles/rebuild_cache.dir
+/home/kira/parallelComputing/build/CMakeFiles/ParallelReduce.dir
+/home/kira/parallelComputing/build/CMakeFiles/TwoStageSerial.dir
+/home/kira/parallelComputing/build/CMakeFiles/NeighborPCCL.dir
+/home/kira/parallelComputing/build/CMakeFiles/CameraPCLL.dir
