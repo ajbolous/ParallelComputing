@@ -42,6 +42,6 @@ __kernel void firstRunPccl(__global uchar *image, int width, int height)
     int index = row * width + col;
     if (image[index] > 0)
     {
-        image[index] = 15*(get_group_id(1) + get_group_id(0));
+        image[index] = (5*get_group_id(1) + 2*get_group_id(0));
     }
 }

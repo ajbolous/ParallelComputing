@@ -63,6 +63,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/CameraTwoStage.dir/DependInfo.cmake"
   "CMakeFiles/ParallelReduce.dir/DependInfo.cmake"
   "CMakeFiles/TwoStageSerial.dir/DependInfo.cmake"
   "CMakeFiles/NeighborPCCL.dir/DependInfo.cmake"

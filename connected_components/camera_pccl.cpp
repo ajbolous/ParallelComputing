@@ -8,6 +8,11 @@
 
 int main(int argc, char **argv)
 {
+    if (argc < 2)
+    {
+        printf("\nPlease provide threshold argument");
+        return 0;
+    }
 
     cv::VideoCapture cap(0); // open the default camera
     if (!cap.isOpened())     // check if we succeeded
@@ -19,8 +24,9 @@ int main(int argc, char **argv)
 
     OpenClLoader ocl;
 
+    // image size is 640x480
     size_t globalWorkSize[2] = {1, 1};
-    size_t localWorkSize[2] = {16, 12};
+    size_t localWorkSize[2] = {24, 18};
 
     globalWorkSize[0] = image.size[1];
     globalWorkSize[1] = image.size[0];
@@ -40,7 +46,7 @@ int main(int argc, char **argv)
         int *changedPtr = &changed;
 
         cv::cvtColor(image, image, CV_BGR2GRAY); //perform gray scale conversion.
-        cv::threshold(image, image, 80, 255, cv::THRESH_BINARY);
+        cv::threshold(image, image, atoi(argv[1]), 255, cv::THRESH_BINARY);
 
         Kernel *fkernel = ocl.load_kernel("pccl.cl", "firstRunPccl", 0);
         fkernel->setBufferArg(0, width * height * sizeof(uchar), image.data);
@@ -73,9 +79,9 @@ int main(int argc, char **argv)
 
         auto finish = std::chrono::high_resolution_clock::now();
         auto d = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
-        printf("\nFrame rate %f",  d/1000.0/1000.0/1000.0);
+        printf("\nTime elapsed %f, Rounds count: %d", d / 1000.0 / 1000.0 / 1000.0, i);
 
         cv::imshow("Display window", image); // Show our image inside it.
-        cv::waitKey(50);
+        cv::waitKey(20);
     }
 }

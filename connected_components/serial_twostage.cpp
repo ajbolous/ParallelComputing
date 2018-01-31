@@ -78,19 +78,19 @@ void linearTwoStage(uchar *image, int width, int height)
 	}
 }
 
-cv::Mat loadImage(char *filename)
+cv::Mat loadImage(char *filename, int thresh)
 {
 	cv::Mat src = cv::imread(filename, 1); // load source image
-
-	cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE); // Create a window for display.
-	imshow("Display window", src);							// Show our image inside it.
 
 	cv::Size size(WIDTH, HEIGHT); //the dst image size,e.g.100x100
 	cv::resize(src, src, size);   //resize image
 
 	cv::Mat gray;
 	cv::cvtColor(src, gray, CV_BGR2GRAY); //perform gray scale conversion.
-	cv::threshold(gray, gray, 127, 255, cv::THRESH_BINARY);
+	cv::threshold(gray, gray, thresh, 255, cv::THRESH_BINARY);
+
+	cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE); // Create a window for display.
+	cv::imshow("Display window", src);						// Show our image inside it.
 
 	cv::waitKey(0);
 	return gray;
@@ -100,13 +100,21 @@ void displayLabeledImage(cv::Mat image)
 {
 	cv::applyColorMap(image, image, cv::COLORMAP_JET);
 	cv::namedWindow("Display window", cv::WINDOW_AUTOSIZE); // Create a window for display.
-	cv::imshow("Display window", image);					// Show our image inside it.
+	cv::imshow("Display window", image);
+	cv::waitKey(0);
+	// Show our image inside it.
 }
 
-int main()
+int main(int argc, char **argv)
 {
 
-	cv::Mat image = loadImage("test3.jpg");
+	if (argc < 3)
+	{
+		printf("\nPlease provide arguments [image, threshold]");
+		return 0;
+	}
+
+	cv::Mat image = loadImage(argv[1], atoi(argv[2]));
 
 	auto start = std::chrono::high_resolution_clock::now();
 
@@ -117,7 +125,4 @@ int main()
 	printf("\nDone executing PCCL Elapsed Time: %f second\n", d / 1000.0 / 1000.0 / 1000.0);
 
 	displayLabeledImage(image);
-	cv::imwrite("twostageout.jpg", image);
-
-	cv::waitKey(0);
 }

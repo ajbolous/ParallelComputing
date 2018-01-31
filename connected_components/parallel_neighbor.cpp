@@ -6,7 +6,6 @@
 
 #include "../ocl/ocl_loader.hpp"
 
-
 cv::Mat loadImage(char *filename, int thresh, int scale, int display)
 {
     cv::Mat src = cv::imread(filename, 1); // load source image
@@ -17,10 +16,10 @@ cv::Mat loadImage(char *filename, int thresh, int scale, int display)
         cv::waitKey(0);
     }
 
-    if(scale){
-    cv::Size size(1920, 1080); //the dst image size,e.g.100x100
-    cv::resize(src, src, size);   //resize image
-
+    if (scale)
+    {
+        cv::Size size(1920, 1080);  //the dst image size,e.g.100x100
+        cv::resize(src, src, size); //resize image
     }
     cv::Mat gray;
     cv::cvtColor(src, gray, CV_BGR2GRAY); //perform gray scale conversion.
@@ -37,12 +36,11 @@ void displayLabeledImage(cv::Mat image)
     cv::waitKey(0);
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-
-
-    if (argc < 4){
-        printf("Please specify all arguments [Image, threshold, scale]");
+    if (argc < 4)
+    {
+        printf("Please specify all arguments [Image, threshold, scale]\n");
         return 0;
     }
 
@@ -78,9 +76,8 @@ int main(int argc, char** argv)
     kernel->setArg(2, sizeof(int), &width);
     kernel->setArg(3, sizeof(int), &height);
 
-
     int i = 0;
-    while (changed > 20)
+    while (changed > 0)
     {
         i++;
         changed = 0;

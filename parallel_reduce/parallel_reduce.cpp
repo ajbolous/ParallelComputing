@@ -24,14 +24,17 @@ int main()
 
 	Kernel *kernel = ocl.load_kernel("psr.cl", "parallelSum", 1);
 
-	auto start = std::chrono::high_resolution_clock::now();
 
 	kernel->setBufferArg(0, VECSIZE * sizeof(float), vec);
 	kernel->setBufferArg(1, NUMWORKGROUPS * sizeof(float), result);
-	kernel->setLocalArg(2, NUMWORKGROUPS * sizeof(float));
+	kernel->setLocalArg(2, WGSIZE * sizeof(float));
 	kernel->setArg(3, sizeof(int), &vecsize);
 
+	auto start = std::chrono::high_resolution_clock::now();
+
 	kernel->execute("ParallelReduction", 1, &globalWorkSize, &localWorkSize);
+
+	auto finish = std::chrono::high_resolution_clock::now();
 
 	kernel->getResult(1, NUMWORKGROUPS * sizeof(float), result);
 
@@ -39,7 +42,6 @@ int main()
 	for (int i = 0; i < NUMWORKGROUPS; i++)
 		sum += result[i];
 
-	auto finish = std::chrono::high_resolution_clock::now();
 	auto d = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
 	printf("\nDone executing ParallelReduce Elapsed Time: %f second", d / 1000.0 / 1000.0 / 1000.0);
 

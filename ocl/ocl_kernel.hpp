@@ -94,22 +94,13 @@ class Kernel
         if (_isDebug)
             printf("\n# Executing Kernel %s  [ dims: %d %d %d %d %d ]", name, dim, globalWorkSize[0], globalWorkSize[1], localWorkSize[0], localWorkSize[1]);
 
-        //Timing 
-        auto start = std::chrono::high_resolution_clock::now();
-
         //Actual executiion of the kernel
         int ret = clEnqueueNDRangeKernel(_queue, _kernel, dim, NULL, globalWorkSize, localWorkSize, 0, NULL, NULL);
 
         if (_isDebug && ret != CL_SUCCESS)
             printf("\n  - Error executing Kernel %s Code: %d\n", name, ret);
-        else
-        {
-            //TIming again we see how long it took
-            auto finish = std::chrono::high_resolution_clock::now();
-            auto d = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
-            if (_isDebug)
-                printf("\n  + Done executing Kernel %s  [ code: %d, elapsedTime: %d nsec ]\n", name, ret, d);
-        }
+        else if (_isDebug)
+            printf("\n  + Done executing Kernel %s  [ code: %d ]\n", name, ret);
     }
 
     void getResult(int argIndex, int size, void *result)

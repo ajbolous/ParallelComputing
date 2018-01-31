@@ -8,7 +8,6 @@ find_package(OpenCL REQUIRED)
 
 
 add_executable(ParallelReduce parallel_reduce/parallel_reduce.cpp)
-target_link_libraries(ParallelReduce ${OpenCV_LIBS})
 target_link_libraries(ParallelReduce ${OpenCL_LIBRARY})
 configure_file(parallel_reduce/psr.cl psr.cl COPYONLY)
 
@@ -22,6 +21,11 @@ target_link_libraries(NeighborPCCL ${OpenCL_LIBRARY})
 add_executable(CameraPCLL connected_components/camera_pccl.cpp)
 target_link_libraries(CameraPCLL ${OpenCV_LIBS})
 target_link_libraries(CameraPCLL ${OpenCL_LIBRARY})
+
+add_executable(CameraTwoStage connected_components/camera_serial.cpp)
+target_link_libraries(CameraTwoStage ${OpenCV_LIBS})
+target_link_libraries(CameraTwoStage ${OpenCL_LIBRARY})
+
 
 
 configure_file(connected_components/pccl.cl pccl.cl COPYONLY)

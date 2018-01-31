@@ -4,12 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kira/parallelComputing/parallel_reduce/parallel_reduce.cpp" "/home/kira/parallelComputing/build/CMakeFiles/ParallelReduce.dir/parallel_reduce/parallel_reduce.cpp.o"
+  "/home/kira/parallelComputing/connected_components/camera_serial.cpp" "/home/kira/parallelComputing/build/CMakeFiles/CameraTwoStage.dir/connected_components/camera_serial.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/opt/ros/kinetic/include/opencv-3.3.1"
+  "/opt/ros/kinetic/include/opencv-3.3.1/opencv"
   )
 
 # Targets to which this target links.

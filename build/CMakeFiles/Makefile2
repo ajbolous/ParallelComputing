@@ -60,13 +60,50 @@ CMAKE_SOURCE_DIR = /home/kira/parallelComputing
 CMAKE_BINARY_DIR = /home/kira/parallelComputing/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/CameraTwoStage.dir
+
+# All Build rule for target.
+CMakeFiles/CameraTwoStage.dir/all:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/depend
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=3,4 "Built target CameraTwoStage"
+.PHONY : CMakeFiles/CameraTwoStage.dir/all
+
+# Include target in all.
+all: CMakeFiles/CameraTwoStage.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CameraTwoStage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CameraTwoStage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kira/parallelComputing/build/CMakeFiles 0
+.PHONY : CMakeFiles/CameraTwoStage.dir/rule
+
+# Convenience name for target.
+CameraTwoStage: CMakeFiles/CameraTwoStage.dir/rule
+
+.PHONY : CameraTwoStage
+
+# clean rule for target.
+CMakeFiles/CameraTwoStage.dir/clean:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/clean
+.PHONY : CMakeFiles/CameraTwoStage.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/CameraTwoStage.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ParallelReduce.dir
 
 # All Build rule for target.
 CMakeFiles/ParallelReduce.dir/all:
 	$(MAKE) -f CMakeFiles/ParallelReduce.dir/build.make CMakeFiles/ParallelReduce.dir/depend
 	$(MAKE) -f CMakeFiles/ParallelReduce.dir/build.make CMakeFiles/ParallelReduce.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=5,6 "Built target ParallelReduce"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=7,8 "Built target ParallelReduce"
 .PHONY : CMakeFiles/ParallelReduce.dir/all
 
 # Include target in all.
@@ -103,7 +140,7 @@ clean: CMakeFiles/ParallelReduce.dir/clean
 CMakeFiles/TwoStageSerial.dir/all:
 	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/depend
 	$(MAKE) -f CMakeFiles/TwoStageSerial.dir/build.make CMakeFiles/TwoStageSerial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=7,8 "Built target TwoStageSerial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=9,10 "Built target TwoStageSerial"
 .PHONY : CMakeFiles/TwoStageSerial.dir/all
 
 # Include target in all.
@@ -140,7 +177,7 @@ clean: CMakeFiles/TwoStageSerial.dir/clean
 CMakeFiles/NeighborPCCL.dir/all:
 	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/depend
 	$(MAKE) -f CMakeFiles/NeighborPCCL.dir/build.make CMakeFiles/NeighborPCCL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=3,4 "Built target NeighborPCCL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kira/parallelComputing/build/CMakeFiles --progress-num=5,6 "Built target NeighborPCCL"
 .PHONY : CMakeFiles/NeighborPCCL.dir/all
 
 # Include target in all.

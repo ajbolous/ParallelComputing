@@ -1,4 +1,5 @@
 /home/kira/parallelComputing/build/CMakeFiles/edit_cache.dir
+/home/kira/parallelComputing/build/CMakeFiles/CameraTwoStage.dir
 /home/kira/parallelComputing/build/CMakeFiles/rebuild_cache.dir
 /home/kira/parallelComputing/build/CMakeFiles/ParallelReduce.dir
 /home/kira/parallelComputing/build/CMakeFiles/TwoStageSerial.dir

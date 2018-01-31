@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named CameraTwoStage
+
+# Build rule for target.
+CameraTwoStage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CameraTwoStage
+.PHONY : CameraTwoStage
+
+# fast build rule for target.
+CameraTwoStage/fast:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/build
+.PHONY : CameraTwoStage/fast
+
+#=============================================================================
 # Target rules for targets named ParallelReduce
 
 # Build rule for target.
@@ -188,6 +201,33 @@ connected_components/camera_pccl.s: connected_components/camera_pccl.cpp.s
 connected_components/camera_pccl.cpp.s:
 	$(MAKE) -f CMakeFiles/CameraPCLL.dir/build.make CMakeFiles/CameraPCLL.dir/connected_components/camera_pccl.cpp.s
 .PHONY : connected_components/camera_pccl.cpp.s
+
+connected_components/camera_serial.o: connected_components/camera_serial.cpp.o
+
+.PHONY : connected_components/camera_serial.o
+
+# target to build an object file
+connected_components/camera_serial.cpp.o:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/connected_components/camera_serial.cpp.o
+.PHONY : connected_components/camera_serial.cpp.o
+
+connected_components/camera_serial.i: connected_components/camera_serial.cpp.i
+
+.PHONY : connected_components/camera_serial.i
+
+# target to preprocess a source file
+connected_components/camera_serial.cpp.i:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/connected_components/camera_serial.cpp.i
+.PHONY : connected_components/camera_serial.cpp.i
+
+connected_components/camera_serial.s: connected_components/camera_serial.cpp.s
+
+.PHONY : connected_components/camera_serial.s
+
+# target to generate assembly for a file
+connected_components/camera_serial.cpp.s:
+	$(MAKE) -f CMakeFiles/CameraTwoStage.dir/build.make CMakeFiles/CameraTwoStage.dir/connected_components/camera_serial.cpp.s
+.PHONY : connected_components/camera_serial.cpp.s
 
 connected_components/parallel_neighbor.o: connected_components/parallel_neighbor.cpp.o
 
@@ -277,6 +317,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... CameraTwoStage"
 	@echo "... rebuild_cache"
 	@echo "... ParallelReduce"
 	@echo "... TwoStageSerial"
@@ -285,6 +326,9 @@ help:
 	@echo "... connected_components/camera_pccl.o"
 	@echo "... connected_components/camera_pccl.i"
 	@echo "... connected_components/camera_pccl.s"
+	@echo "... connected_components/camera_serial.o"
+	@echo "... connected_components/camera_serial.i"
+	@echo "... connected_components/camera_serial.s"
 	@echo "... connected_components/parallel_neighbor.o"
 	@echo "... connected_components/parallel_neighbor.i"
 	@echo "... connected_components/parallel_neighbor.s"
